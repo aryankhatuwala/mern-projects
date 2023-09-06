@@ -1,0 +1,30 @@
+/* Style the table */
+.company-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style table header */
+.company-table th {
+    background-color: #e41b1b;
+    color: white;
+    text-align: left;
+    padding: 10px;
+}
+
+/* Style alternating rows */
+.company-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style table cell padding and text alignment */
+.company-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Highlight table row on hover */
+.company-table tbody tr:hover {
+    background-color: #ccc;
+}
