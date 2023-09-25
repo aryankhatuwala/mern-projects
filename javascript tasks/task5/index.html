@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <style>
+      /* Add custom styles here */
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Contact Us</h2>
+
+    <form id="contactForm" onsubmit="return validateForm()">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <br />
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <br />
+      <div>
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website" required />
+      </div>
+      <br />
+      <div>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <br />
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+      <br />
+    </form>
+
+    <div id="errorMessage" class="error"></div>
+
+    <script>
+      function validateForm() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var website = document.getElementById("website").value;
+        var message = document.getElementById("message").value;
+        var errorMessage = document.getElementById("errorMessage");
+
+        var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+        var websiteRegex =
+          /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
+
+        errorMessage.innerHTML = "";
+
+        if (
+          name.trim() === "" ||
+          email.trim() === "" ||
+          website.trim() === "" ||
+          message.trim() === ""
+        ) {
+          errorMessage.innerHTML = "All fields are required.";
+          return false;
+        }
+
+        if (!emailRegex.test(email)) {
+          errorMessage.innerHTML = "Please enter a valid email address.";
+          return false;
+        }
+
+        if (!websiteRegex.test(website)) {
+          errorMessage.innerHTML = "Please enter a valid website URL.";
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </body>
+</html>

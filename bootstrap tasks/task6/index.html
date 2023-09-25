@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attractive Form</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+
+    <style>
+      .custom-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .custom-form {
+        max-width: 400px;
+      }
+
+      .custom-button {
+        background-color: red;
+        border: none;
+        color: white;
+      }
+
+      .custom-button:hover {
+        background-color: #ff4444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container custom-container">
+      <form class="custom-form">
+        <h2 class="mb-4">Signup</h2>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="hobbies" class="form-label">Hobbies</label>
+          <input type="text" class="form-control" id="hobbies" name="hobbies" />
+        </div>
+        <button type="submit" class="btn custom-button btn-block">
+          Submit
+        </button>
+      </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
